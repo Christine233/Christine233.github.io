@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>C Primer Plus - 第三章 数据和C 总结 | This is Christine</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="C," />
+  
+
+  <meta name="description" content="数据类型 基本数据类型 : 由11个关键字组成：int , long , short , char, float, double, signed , unsigned , _Bool , _Complex , _Imaginary 。  在不同的系统上，这些类型占据的字节长度不同，C标准对基本数据类型只规定了允许的最小大小，其中 short 占用的存储空间不能多于 int , long 占用的存储">
+<meta name="keywords" content="C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C Primer Plus - 第三章 数据和C 总结">
+<meta property="og:url" content="http://yoursite.com/2018/06/13/03 C Primer Plus - 第三章 数据和C/index.html">
+<meta property="og:site_name" content="This is Christine">
+<meta property="og:description" content="数据类型 基本数据类型 : 由11个关键字组成：int , long , short , char, float, double, signed , unsigned , _Bool , _Complex , _Imaginary 。  在不同的系统上，这些类型占据的字节长度不同，C标准对基本数据类型只规定了允许的最小大小，其中 short 占用的存储空间不能多于 int , long 占用的存储">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://pa7fvaugk.bkt.clouddn.com/c-primer-plus-chapter3-01.png">
+<meta property="og:image" content="http://pa7fvaugk.bkt.clouddn.com/c-primer-plus-chapter3-02.1.png">
+<meta property="og:image" content="http://pa7fvaugk.bkt.clouddn.com/c-primer-plus-chapter3-03.1.png">
+<meta property="og:image" content="http://pa7fvaugk.bkt.clouddn.com/c-primer-plus-chapter3-04.1.png">
+<meta property="og:updated_time" content="2018-06-16T17:03:58.741Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C Primer Plus - 第三章 数据和C 总结">
+<meta name="twitter:description" content="数据类型 基本数据类型 : 由11个关键字组成：int , long , short , char, float, double, signed , unsigned , _Bool , _Complex , _Imaginary 。  在不同的系统上，这些类型占据的字节长度不同，C标准对基本数据类型只规定了允许的最小大小，其中 short 占用的存储空间不能多于 int , long 占用的存储">
+<meta name="twitter:image" content="http://pa7fvaugk.bkt.clouddn.com/c-primer-plus-chapter3-01.png">
+
+  
+
+  
+    <link rel="icon" href="/images/blog_ico.png">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            rel="noopener noreferrer"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数制"><span class="toc-text">数制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标记"><span class="toc-text">标记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#格式字符转换"><span class="toc-text">格式字符转换</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-03 C Primer Plus - 第三章 数据和C" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">C Primer Plus - 第三章 数据和C 总结</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.06.13</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>一白</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/C/">C</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="https://christine233.github.io//2018/06/13/03 C Primer Plus - 第三章 数据和C/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p><img src="http://pa7fvaugk.bkt.clouddn.com/c-primer-plus-chapter3-01.png" alt="c-primer-plus-chapter3-01"></p>
+<p><strong>基本数据类型</strong> : 由11个关键字组成：<code>int</code> , <code>long</code> , <code>short</code> , <code>char</code>, <code>float</code>, <code>double</code>, <code>signed</code> , <code>unsigned</code> , <code>_Bool</code> , <code>_Complex</code> , <code>_Imaginary</code> 。 </p>
+<p>在不同的系统上，这些类型占据的字节长度不同，C标准对基本数据类型只规定了允许的最小大小，其中 <code>short</code> 占用的存储空间不能多于 <code>int</code> , <code>long</code> 占用的存储空间不能少于 <code>int</code>。 </p>
+<p>目前个人计算机上最常见的设置是:</p>
+<blockquote>
+<ul>
+<li><strong>short / short int</strong> : 2 byte<br>// 最大的short类型整数 &lt;= 最大的int类型整数。 C语言规定至少占16位;</li>
+<li><strong>int</strong> : 2 或 4 byte<br>// 依计算机的自然字长而定。C语言规定不小于16位;</li>
+<li><strong>long / long int</strong> : 4 byte<br>// 该类型可表示的整数 &gt;= 最大的int类型整数。C语言规定至少占32位;</li>
+<li><strong>long long / long long int</strong> : 8 byte<br>// 该类型可表示的整数 &gt;= 最大的long类型整数。C语言规定至少占64位;</li>
+<li><strong>float</strong> : 4 byte;</li>
+<li><strong>double</strong> : 8 byte;</li>
+<li><strong>char</strong> : 1 byte;</li>
+</ul>
+</blockquote>
+<p>原则上，<code>short</code>, <code>int</code>, <code>long</code>, <code>long long</code>这4种类型代表4种不同大小，但在实际使用中，有些类型之间通常有重叠。<br>具体可用 <code>sizeof()</code> 测试一下。</p>
+<p><strong>可移植类型</strong>：<code>stdint.h</code>和 <code>inttypes.h</code></p>
+<blockquote>
+<ul>
+<li><strong>精确宽度类型</strong>：eg: int32_t, 32位有符号整数类型，整数类型的宽度正好是32位</li>
+<li><strong>最小宽度类型</strong>: eg: int_least8_t, 可容纳8位有符号整数值的类型中宽度最小的类型的一个别名</li>
+<li><strong>最快最小宽度类型</strong>: eg: int_fast8_t, 系统中对8位有符号值而言运算最快的整数类型的别名</li>
+</ul>
+</blockquote>
+<h2 id="数制"><a href="#数制" class="headerlink" title="数制"></a>数制</h2><table>
+<thead>
+<tr>
+<th>数制</th>
+<th>表示方法</th>
+<th>显示各进制数制的前缀</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>八进制</td>
+<td>前缀“0”, %o</td>
+<td>%#o</td>
+</tr>
+<tr>
+<td>十进制</td>
+<td>无前缀 , %d</td>
+<td></td>
+</tr>
+<tr>
+<td>十六进制</td>
+<td>前缀“0x” , %x</td>
+<td>%#x</td>
+</tr>
+</tbody>
+</table>
+<h2 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h2><table>
+<thead>
+<tr>
+<th>标志</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#</td>
+<td>显示各进制数制的前缀,见上表格事例</td>
+</tr>
+<tr>
+<td>-</td>
+<td>输出数据向左对齐，数据向左靠</td>
+</tr>
+<tr>
+<td>+</td>
+<td>有符号的值若为正，则显示带加号的符号；若为负，则显示带减号的符号</td>
+</tr>
+<tr>
+<td>（空格）</td>
+<td>有符号的值若为正，则显示时带前导空格(但是不显示符号);若为负，则带减号符号。+标志会覆盖空格标志</td>
+</tr>
+<tr>
+<td>0</td>
+<td>对于所有的数字格式，用前导零而不是空格填充字段宽度。如果出现-标志或者指定了精度(对于整数)则忽略该标志</td>
+</tr>
+</tbody>
+</table>
+<p><img src="http://pa7fvaugk.bkt.clouddn.com/c-primer-plus-chapter3-02.1.png" alt="c-primer-plus-chapter3-02.1"><br><img src="http://pa7fvaugk.bkt.clouddn.com/c-primer-plus-chapter3-03.1.png" alt="c-primer-plus-chapter3-03.1">&nbsp;&nbsp;<img src="http://pa7fvaugk.bkt.clouddn.com/c-primer-plus-chapter3-04.1.png" alt="c-primer-plus-chapter3-04.1"></p>
+<h2 id="格式字符转换"><a href="#格式字符转换" class="headerlink" title="格式字符转换"></a>格式字符转换</h2><table>
+<thead>
+<tr>
+<th>转换说明</th>
+<th>数据类型</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%d,%i</td>
+<td>int</td>
+<td>输出有符号的十进制整数</td>
+</tr>
+<tr>
+<td>%ld</td>
+<td>long int</td>
+<td>l,ll和整数转换符一起使用，类似：%lo, %lx, %lu; %lld (long long int)</td>
+</tr>
+<tr>
+<td>%hd</td>
+<td>short int，unsigned short int</td>
+<td>h和整数转换符一起使用，类似：%ho, %lx</td>
+</tr>
+<tr>
+<td>%u</td>
+<td>unsigned int</td>
+<td>无浮点型整数</td>
+</tr>
+<tr>
+<td>%c</td>
+<td>char</td>
+<td></td>
+</tr>
+<tr>
+<td>%f</td>
+<td>float,double</td>
+<td></td>
+</tr>
+<tr>
+<td>%Lf</td>
+<td>long double</td>
+<td>L和浮点数转换说明符一起使用，类似：%Lf, %10.4Le</td>
+</tr>
+<tr>
+<td>%a,%A</td>
+<td>浮点数、十六进制数和p计数法(C99/C11)</td>
+<td></td>
+</tr>
+<tr>
+<td>%e,%E</td>
+<td>浮点数，以指数形式输出</td>
+<td>2.87e-3, .2e5</td>
+</tr>
+<tr>
+<td>%g,%G</td>
+<td>根据数值不同自动选择%f或%e,%e格式在指数小于-4或者大于等于精度时使用</td>
+<td></td>
+</tr>
+<tr>
+<td>%s</td>
+<td>输出一个字符串</td>
+<td>c语言中无字符串类型，要添加头文件&lt;string.h&gt;</td>
+</tr>
+<tr>
+<td>%o</td>
+<td>八进制输出int or long int or short int</td>
+<td>显示八进制数制前缀:%#o</td>
+</tr>
+<tr>
+<td>%x,%X</td>
+<td>以16进制输出</td>
+<td>%#x</td>
+</tr>
+<tr>
+<td>%zd</td>
+<td>sizeof返回类型, 如要打印sizeof(int)的值</td>
+<td>一些不支持C99和C11的编译器可用%u或%lu代替%zd，类似：%zd，%12zx</td>
+</tr>
+<tr>
+<td>%p</td>
+<td>指针</td>
+<td></td>
+</tr>
+<tr>
+<td>%%</td>
+<td>打印一个百分数</td>
+</tr>
+</tbody>
+</table>
+<p><strong>f格式符：</strong></p>
+<blockquote>
+<ol>
+<li><strong>%f</strong>: 系统处理一般方法是整数部分全部输出，小数部分输出6位</li>
+<li><strong>%m.n</strong>: 指定数据宽度和小数位数。总的字符长度m位，小数点后n位</li>
+<li><strong>%-m.n</strong>: 输出数据向左对齐，数据向左靠，长度不超过m时右端补空格</li>
+</ol>
+</blockquote>
+
+    
+  </div>
+
+  
+      <div class="git"></div>
+  
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持我</div>
+        <ul>
+        
+          <li class="item">
+            <span>微信扫一扫</span>
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            <span>支付宝扫一扫</span>
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2018/06/10/02 C Primer Plus - Chapter2 Answers/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2018/06/15/04 C Primer Plus - Chapter3 Answers/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              rel="noopener noreferrer"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'forsigner';
+    
+    var disqus_url = 'http://yoursite.com/2018/06/13/03 C Primer Plus - 第三章 数据和C/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+
+
+
+    
+    
+
+    
+    
+
+    
+
+    
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>win下通过Github和Hexo搭建博客 | This is Christine</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Hexo," />
+  
+
+  <meta name="description" content="具体搭建具体如何搭建，已经有很多大大写好了完备的经验，下面是笔者最喜欢的：    hexo 中文官方文档 gaea2 | 前端笔记 GitHub+Hexo 搭建个人网站详细教程 使用VSCode+七牛云图床插件+自定义快捷键配置Hexo博文编写环境    由于之前已经装好了win版git和Node.js，所以后面的搭建还算简单顺利，在这里主要记一下我遇到了两个问题： 1. hexo sever端口">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="win下通过Github和Hexo搭建博客">
+<meta property="og:url" content="http://yoursite.com/2018/04/30/01 win下通过Github和Hexo搭建博客/index.html">
+<meta property="og:site_name" content="This is Christine">
+<meta property="og:description" content="具体搭建具体如何搭建，已经有很多大大写好了完备的经验，下面是笔者最喜欢的：    hexo 中文官方文档 gaea2 | 前端笔记 GitHub+Hexo 搭建个人网站详细教程 使用VSCode+七牛云图床插件+自定义快捷键配置Hexo博文编写环境    由于之前已经装好了win版git和Node.js，所以后面的搭建还算简单顺利，在这里主要记一下我遇到了两个问题： 1. hexo sever端口">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://pa7fvaugk.bkt.clouddn.com/win%E4%B8%8B%E9%80%9A%E8%BF%87Github-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A201.png">
+<meta property="og:updated_time" content="2018-06-16T17:04:06.428Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="win下通过Github和Hexo搭建博客">
+<meta name="twitter:description" content="具体搭建具体如何搭建，已经有很多大大写好了完备的经验，下面是笔者最喜欢的：    hexo 中文官方文档 gaea2 | 前端笔记 GitHub+Hexo 搭建个人网站详细教程 使用VSCode+七牛云图床插件+自定义快捷键配置Hexo博文编写环境    由于之前已经装好了win版git和Node.js，所以后面的搭建还算简单顺利，在这里主要记一下我遇到了两个问题： 1. hexo sever端口">
+<meta name="twitter:image" content="http://pa7fvaugk.bkt.clouddn.com/win%E4%B8%8B%E9%80%9A%E8%BF%87Github-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A201.png">
+
+  
+
+  
+    <link rel="icon" href="/images/blog_ico.png">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            rel="noopener noreferrer"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#具体搭建"><span class="toc-text">具体搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-hexo-sever端口占用，localhost-4000无响应"><span class="toc-text">1. hexo sever端口占用，localhost:4000无响应:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-问题描述如下"><span class="toc-text">2.问题描述如下</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fexo主题中文文档"><span class="toc-text">Fexo主题中文文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown-amp-Hexo"><span class="toc-text">Markdown &amp; Hexo</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-01 win下通过Github和Hexo搭建博客" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">win下通过Github和Hexo搭建博客</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.04.30</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>一白</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/教程记录/">教程记录</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="https://christine233.github.io//2018/04/30/01 win下通过Github和Hexo搭建博客/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h2 id="具体搭建"><a href="#具体搭建" class="headerlink" title="具体搭建"></a>具体搭建</h2><p>具体如何搭建，已经有很多大大写好了完备的经验，下面是笔者最喜欢的：</p>
+<!-- > <div style="text-align:left"> -->
+<blockquote>
+<ul>
+<li><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">hexo 中文官方文档</a></li>
+<li><a href="https://gaea2.github.io/2016/06/28/hexo%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/#more" target="_blank" rel="noopener">gaea2 | 前端笔记</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">GitHub+Hexo 搭建个人网站详细教程</a></li>
+<li><a href="https://blog.csdn.net/qq_32454537/article/details/79482850" target="_blank" rel="noopener">使用VSCode+七牛云图床插件+自定义快捷键配置Hexo博文编写环境</a><!-- </div> -->
+</li>
+</ul>
+</blockquote>
+<p>由于之前已经装好了win版git和Node.js，所以后面的搭建还算简单顺利，在这里主要记一下我遇到了两个问题：</p>
+<h4 id="1-hexo-sever端口占用，localhost-4000无响应"><a href="#1-hexo-sever端口占用，localhost-4000无响应" class="headerlink" title="1. hexo sever端口占用，localhost:4000无响应:"></a>1. hexo sever端口占用，localhost:4000无响应:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">FATAL Port 4000 has been used. Try other port instead.</span><br><span class="line">FATAL Something<span class="string">'s wrong. Maybe you can find the solution here: http://hexo.io/do</span></span><br><span class="line"><span class="string">Error: listen EADDRINUSE 0.0.0.0:4000</span></span><br><span class="line"><span class="string">    at Object.exports._errnoException (util.js:1026:11)</span></span><br><span class="line"><span class="string">    at exports._exceptionWithHostPort (util.js:1049:20)</span></span><br><span class="line"><span class="string">    at Server._listen2 (net.js:1257:14)</span></span><br><span class="line"><span class="string">    at listen (net.js:1293:10)</span></span><br><span class="line"><span class="string">    at net.js:1403:9</span></span><br><span class="line"><span class="string">    at _combinedTickCallback (internal/process/next_tick.js:77:11)</span></span><br><span class="line"><span class="string">    at process._tickCallback (internal/process/next_tick.js:98:9)</span></span><br></pre></td></tr></table></figure>
+<p>解决办法：<strong>更改默认端口号</strong><br>在 <code>_config.yml</code> 内加上如下代码更改 <code>hexo-server</code> 运行时的端口号：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: 5000</span><br><span class="line">  compress: <span class="literal">true</span></span><br><span class="line">  header: <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<p>或者通过 <code>$ hexo server -p 5000</code> 命令来指定端口<br>// 这个方法不能一劳永逸每次退出后需要重新指定，推荐使用上一个方法</p>
+<h4 id="2-问题描述如下"><a href="#2-问题描述如下" class="headerlink" title="2.问题描述如下"></a>2.问题描述如下</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br><span class="line">fatal: HttpRequestException encountered.</span><br><span class="line">bash: /dev/tty: No such device or address </span><br><span class="line">error: failed to execute prompt script (<span class="built_in">exit</span> code 1) </span><br><span class="line">fatal: could not <span class="built_in">read</span> Username <span class="keyword">for</span> <span class="string">'https://github.com'</span>: No error FATAL Something<span class="string">'s wrong. </span></span><br><span class="line"><span class="string">Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html </span></span><br><span class="line"><span class="string">Error: fatal: HttpRequestException encountered.</span></span><br><span class="line"><span class="string">bash: /dev/tty: No such device or address </span></span><br><span class="line"><span class="string">error: failed to execute prompt script (exit code 1) </span></span><br><span class="line"><span class="string">fatal: could not read Username for '</span>https://github.com<span class="string">': No error at ChildProcess.&lt;anonymous&gt; (D:\summary\blog\node_modules\hexo-util\lib\spawn.js:37:17)</span></span><br><span class="line"><span class="string">at emitTwo (events.js:106:13)     </span></span><br><span class="line"><span class="string">at ChildProcess.emit (events.js:191:7)     </span></span><br><span class="line"><span class="string">at ChildProcess.cp.emit (D:\summary\blog\node_modules\cross-spawn\lib\enoent.js:40:29)</span></span><br><span class="line"><span class="string">at maybeClose (internal/child_process.js:886:16)     </span></span><br><span class="line"><span class="string">at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)</span></span><br></pre></td></tr></table></figure>
+<p>解决办法：<strong>不用 win cmd 改用 git bash</strong></p>
+<p>此时我又发现自己右键没有 <code>打开git bash</code> 喵喵喵？？？<br>据说是因为我把 <code>git</code> 装在了d盘…</p>
+<p>于是开始进行 <strong>将 git bash 添加进注册表，并可以在文件夹空白处右键菜单添加 Git Bash Here</strong> 的操作：</p>
+<ul>
+<li><code>win + r</code> 输入 <code>regedit</code> 打开注册表编辑器</li>
+<li>进入 <code>HKEY_CLASSES_ROOT\Directory\Background\shell</code></li>
+<li>在shell下新建项并命名为 <code>Git Bash Here</code></li>
+<li>在 <code>Git Bash Here</code> 目录下新建项并命名为 <code>Command</code> ，其值为<code>&quot;D:\software\manong\GitHub\Git\git-bash.exe&quot;</code>，即<strong>git-bash.exe 所在的完整路径（自己加自己的，这里是参考）</strong>，注意加引号。如下图所示：<br><img src="http://pa7fvaugk.bkt.clouddn.com/win%E4%B8%8B%E9%80%9A%E8%BF%87Github-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A201.png" alt=""></li>
+<li>保存后，随便找个文件夹空白处右键，即会发现新加了 <code>Git Bash Here</code> 快捷键。</li>
+</ul>
+<p><strong>win10亲测可用</strong></p>
+<hr>
+<h2 id="Fexo主题中文文档"><a href="#Fexo主题中文文档" class="headerlink" title="Fexo主题中文文档"></a>Fexo主题中文文档</h2><blockquote>
+<ul>
+<li><a href="http://forsigner.com/2016/03/10/fexo-doc-zh-cn/" target="_blank" rel="noopener">Fexo文档</a></li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="Markdown-amp-Hexo"><a href="#Markdown-amp-Hexo" class="headerlink" title="Markdown &amp; Hexo"></a>Markdown &amp; Hexo</h2><blockquote>
+<p>-<a href="https://wizardforcel.gitbooks.io/markdown-simple-world/content/hexo-tutor-3.html" target="_blank" rel="noopener">用Markdown写博客</a></p>
+</blockquote>
+
+    
+  </div>
+
+  
+      <div class="git"></div>
+  
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持我</div>
+        <ul>
+        
+          <li class="item">
+            <span>微信扫一扫</span>
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            <span>支付宝扫一扫</span>
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2018/04/30/00 hello-world/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2018/06/10/02 C Primer Plus - Chapter2 Answers/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              rel="noopener noreferrer"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'forsigner';
+    
+    var disqus_url = 'http://yoursite.com/2018/04/30/01 win下通过Github和Hexo搭建博客/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+
+
+
+    
+    
+
+    
+    
+
+    
+
+    
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
