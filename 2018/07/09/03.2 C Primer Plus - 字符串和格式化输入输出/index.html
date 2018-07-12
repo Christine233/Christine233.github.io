@@ -7,26 +7,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | This is Christine</title>
+  <title>C Primer Plus - 字符串和格式化输入/输出 总结 | This is Christine</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="Hexo," />
+    <meta name="keywords" content="C," />
   
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta name="keywords" content="Hexo">
+  <meta name="description" content="字符串简介 C语言没有专门用于储存字符串的变量类型，字符串都被存储在char类型的数组中。 ‘\0’：空字符（ASCII码值为0），用来标记字符串的结束。 数组：同类型数据元素的有序序列 注意字符串结尾要加’\0’    引号 双引号: 告知编译器它括起来的是字符串 单引号： 用于标识单个字符  strlen()函数sizeof()，以字节为单位给出对象的大小strlen() 函数给出字符串中的字">
+<meta name="keywords" content="C">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/04/30/hello-world/index.html">
+<meta property="og:title" content="C Primer Plus - 字符串和格式化输入&#x2F;输出 总结">
+<meta property="og:url" content="http://yoursite.com/2018/07/09/03.2 C Primer Plus - 字符串和格式化输入输出/index.html">
 <meta property="og:site_name" content="This is Christine">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="字符串简介 C语言没有专门用于储存字符串的变量类型，字符串都被存储在char类型的数组中。 ‘\0’：空字符（ASCII码值为0），用来标记字符串的结束。 数组：同类型数据元素的有序序列 注意字符串结尾要加’\0’    引号 双引号: 告知编译器它括起来的是字符串 单引号： 用于标识单个字符  strlen()函数sizeof()，以字节为单位给出对象的大小strlen() 函数给出字符串中的字">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-15T17:42:45.739Z">
+<meta property="og:updated_time" content="2018-07-12T01:22:01.017Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="C Primer Plus - 字符串和格式化输入&#x2F;输出 总结">
+<meta name="twitter:description" content="字符串简介 C语言没有专门用于储存字符串的变量类型，字符串都被存储在char类型的数组中。 ‘\0’：空字符（ASCII码值为0），用来标记字符串的结束。 数组：同类型数据元素的有序序列 注意字符串结尾要加’\0’    引号 双引号: 告知编译器它括起来的是字符串 单引号： 用于标识单个字符  strlen()函数sizeof()，以字节为单位给出对象的大小strlen() 函数给出字符串中的字">
 
   
 
@@ -185,20 +185,20 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-then-deploy"><span class="toc-text">Run then deploy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Init"><span class="toc-text">Init</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Publish"><span class="toc-text">Publish</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Clean"><span class="toc-text">Clean</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串简介"><span class="toc-text">字符串简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#引号"><span class="toc-text">引号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#strlen-函数"><span class="toc-text">strlen()函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常量"><span class="toc-text">常量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#printf-和scanf-的-修饰符"><span class="toc-text">printf()和scanf()的*修饰符</span></a></li></ol>
   </div>
 
 
 
 <div class="content content-post CENTER">
-   <article id="post-hello-world" class="article article-type-post" itemprop="blogPost">
+   <article id="post-03.2 C Primer Plus - 字符串和格式化输入输出" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">Hello World</h1>
+    <h1 class="post-title">C Primer Plus - 字符串和格式化输入/输出 总结</h1>
 
     <div class="article-meta">
       <span>
         <i class="icon-calendar"></i>
-        <span>2018.04.30</span>
+        <span>2018.07.09</span>
       </span>
 
       
@@ -211,7 +211,7 @@
       
   <span class="article-category">
     <i class="icon-list"></i>
-    <a class="article-category-link" href="/categories/使用手册/">使用手册</a>
+    <a class="article-category-link" href="/categories/C/">C</a>
   </span>
 
 
@@ -219,7 +219,7 @@
       
         <span>
           <i class="icon-comment"></i>
-          <a href="https://christine233.github.io//2018/04/30/hello-world/#disqus_thread"></a>
+          <a href="https://christine233.github.io//2018/07/09/03.2 C Primer Plus - 字符串和格式化输入输出/#disqus_thread"></a>
         </span>
       
 
@@ -236,21 +236,22 @@
 
   <div class="article-content">
     
-      <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span> == hexo n <span class="string">"My New Post"</span>  <span class="comment">#新建文章</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate == hexo g  <span class="comment">#生成网页</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server == hexo s  <span class="comment">#启动服务预览，在本地预览, Hexo会监视文件变动并自动更新，无须重启服务器</span></span><br><span class="line">$ hexo server -s  <span class="comment">#静态模式</span></span><br><span class="line">$ hexo server -p 5000  <span class="comment">#更改端口</span></span><br><span class="line">$ hexo server -i 192.168.1.1  <span class="comment">#自定义 IP</span></span><br><span class="line">$ hexo clean  <span class="comment">#清除缓存，若是网页正常情况下可以忽略这条命令</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy == hexo d  <span class="comment">#将网站部署到服务器上</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<h3 id="Run-then-deploy"><a href="#Run-then-deploy" class="headerlink" title="Run then deploy"></a>Run then deploy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate --deploy</span><br><span class="line">$ hexo deploy --generate  <span class="comment">#可执行其中一个命令,两个命令作用相同。</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="Init"><a href="#Init" class="headerlink" title="Init"></a>Init</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init [folder]  <span class="comment">#新建一个网站。如果没有设置 folder ，Hexo 默认在目前的文件夹建立网站。</span></span><br></pre></td></tr></table></figure>
-<h3 id="Publish"><a href="#Publish" class="headerlink" title="Publish"></a>Publish</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo publish [layout] &lt;filename&gt;  <span class="comment">#发表草稿</span></span><br></pre></td></tr></table></figure>
-<h3 id="Clean"><a href="#Clean" class="headerlink" title="Clean"></a>Clean</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean  <span class="comment">#清除缓存文件 (db.json) 和已生成的静态文件 (public)。</span></span><br></pre></td></tr></table></figure>
-<p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
+      <h2 id="字符串简介"><a href="#字符串简介" class="headerlink" title="字符串简介"></a>字符串简介</h2><ul>
+<li>C语言没有专门用于储存字符串的变量类型，字符串都被存储在char类型的数组中。</li>
+<li>‘\0’：空字符（ASCII码值为0），用来标记字符串的结束。</li>
+<li>数组：同类型数据元素的有序序列<blockquote>
+<p>注意字符串结尾要加’\0’</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="引号"><a href="#引号" class="headerlink" title="引号"></a>引号</h3><ul>
+<li><strong>双引号</strong>: 告知编译器它括起来的是字符串</li>
+<li><strong>单引号</strong>： 用于标识单个字符</li>
+</ul>
+<h3 id="strlen-函数"><a href="#strlen-函数" class="headerlink" title="strlen()函数"></a>strlen()函数</h3><p><strong>sizeof()</strong>，以字节为单位给出对象的大小<br><strong>strlen()</strong> 函数给出字符串中的字符长度</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> STRING <span class="meta-string">"hello world"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> <span class="built_in">string</span>[<span class="number">20</span>];</span><br><span class="line"><span class="comment">// sizeof(STRING):12; sizeof(string):20</span></span><br><span class="line"><span class="comment">// strlen(STRING):11; strlen(string):11</span></span><br></pre></td></tr></table></figure>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p><strong>#define NAME value</strong><br><code>value</code> 可以是数值，字符，字符串<br><strong>const关键字</strong>：限定一个变量为只读<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MONTHS = <span class="number">12</span>; <span class="comment">// MONTHS 在程序中不可改，值为12</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="printf-和scanf-的-修饰符"><a href="#printf-和scanf-的-修饰符" class="headerlink" title="printf()和scanf()的*修饰符"></a>printf()和scanf()的*修饰符</h2><p><strong>printf()</strong>：用 <code>*</code> 修饰符代替字段宽度。可用于变宽输出字段<br><strong>scanf()</strong>：把 <code>*</code> 放在%和转换字符之间，会使scanf()跳过相应的输出项。可用于读取文件中特定列的内容。</p>
 
     
   </div>
@@ -288,10 +289,10 @@
 
    
   <div class="box-prev-next clearfix">
-    <a class="hide pull-left" href="/">
+    <a class="show pull-left" href="/2018/06/17/04.1 C++ Primer Plus - Chapter2 Answers/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="show pull-right" href="/2018/04/30/win下通过Github和Hexo搭建博客/">
+    <a class="show pull-right" href="/2018/07/12/02.3 C Primer Plus - Chapter4 Answers/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
@@ -416,7 +417,7 @@
   <script>
     var disqus_shortname = 'forsigner';
     
-    var disqus_url = 'http://yoursite.com/2018/04/30/hello-world/';
+    var disqus_url = 'http://yoursite.com/2018/07/09/03.2 C Primer Plus - 字符串和格式化输入输出/';
     
     (function(){
       var dsq = document.createElement('script');
