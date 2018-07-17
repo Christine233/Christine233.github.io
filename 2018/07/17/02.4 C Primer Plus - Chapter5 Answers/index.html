@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="This is Christine">
 <meta property="og:description" content="注意while条件的使用 T9.运用了scanf()函数的返回值:返回正确按指定格式输入变量的个数，即能正确接收到值的变量个数。读取一个数字，返回1，读取q则不返回1若输入数据与指定格式不符，会产生输入错误。遇到输入错误，scanf函数会立即终止，返回已经成功读取的数据的个数。  scanf() 的返回值可以分成三种情况  正整数，表示正确输入参数的个数。例如执行 scanf(“%d %d”, &amp;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-17T07:34:57.422Z">
+<meta property="og:updated_time" content="2018-07-17T10:03:38.571Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C Primer Plus - Chapter5 Answers">
 <meta name="twitter:description" content="注意while条件的使用 T9.运用了scanf()函数的返回值:返回正确按指定格式输入变量的个数，即能正确接收到值的变量个数。读取一个数字，返回1，读取q则不返回1若输入数据与指定格式不符，会产生输入错误。遇到输入错误，scanf函数会立即终止，返回已经成功读取的数据的个数。  scanf() 的返回值可以分成三种情况  正整数，表示正确输入参数的个数。例如执行 scanf(“%d %d”, &amp;">
@@ -185,7 +185,7 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#注意while条件的使用"><span class="toc-text">注意while条件的使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#scanf-的返回值可以分成三种情况"><span class="toc-text">scanf() 的返回值可以分成三种情况</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#注意while条件的使用"><span class="toc-text">注意while条件的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scanf-的返回值可以分成三种情况"><span class="toc-text">scanf() 的返回值可以分成三种情况</span></a></li></ol>
   </div>
 
 
@@ -236,10 +236,10 @@
 
   <div class="article-content">
     
-      <h4 id="注意while条件的使用"><a href="#注意while条件的使用" class="headerlink" title="注意while条件的使用"></a>注意while条件的使用</h4><blockquote>
+      <h2 id="注意while条件的使用"><a href="#注意while条件的使用" class="headerlink" title="注意while条件的使用"></a>注意while条件的使用</h2><blockquote>
 <p>T9.运用了scanf()函数的返回值:返回正确按指定格式输入变量的个数，即能正确接收到值的变量个数。<br>读取一个数字，返回1，读取q则不返回1<br>若输入数据与指定格式不符，会产生输入错误。遇到输入错误，scanf函数会立即终止，返回已经成功读取的数据的个数。</p>
 </blockquote>
-<h4 id="scanf-的返回值可以分成三种情况"><a href="#scanf-的返回值可以分成三种情况" class="headerlink" title="scanf() 的返回值可以分成三种情况"></a>scanf() 的返回值可以分成三种情况</h4><blockquote>
+<h2 id="scanf-的返回值可以分成三种情况"><a href="#scanf-的返回值可以分成三种情况" class="headerlink" title="scanf() 的返回值可以分成三种情况"></a>scanf() 的返回值可以分成三种情况</h2><blockquote>
 <ul>
 <li><strong>正整数</strong>，表示正确输入参数的个数。例如执行 scanf(“%d %d”, &amp;a, &amp;b);<br>  如果用户输入”3 4”，可以正确输入，返回2（正确输入了两个变量）；<br>  如果用户输入”3,4”，可以正确输入a，无法输入b，返回1（正确输入了一个变量）。    </li>
 <li><strong>0</strong>，表示用户的输入不匹配，无法正确输入任何值。如上例，用户如果输入”,3 4”，返回0。</li>
